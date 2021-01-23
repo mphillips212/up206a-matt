@@ -37,4 +37,42 @@ len() tells you how many characters are in a string
 variable[number] tells you the position of a character in a string variable
   variable.replace('e', 'E') replaces all little es with big Es
 
+for general data wrangling tasks: import pandas as pd
 
+to read and visualize spatial data: import geopandas as gpd
+
+to provide basemaps: import contextily as ctx
+
+to give more power to your figures (plots): import matplotlib.pyplot as plt
+
+df.plot() = plot your data
+
+I want to see all the data
+  pd.set_option('display.max_columns', None)
+  pd.set_option('display.max_rows', None)
+
+to see info from one column: df.columnname.head()
+
+drop the row with index 0 (i.e. the first row): df = df.drop([0])
+
+designate certain columns to keep (and discard others)
+  columns_to_keep = ['','']
+  then must redefine dataframe df = df[columns_to_keep]
+  
+list columns: list(gdf) OR df.columns.to_list()
+
+rename columns: gdf.columns = ['',''}
+
+access a single column: df['columnname'] OR df['columnname'].head()
+
+get stats for a column: df['columnname'].describe()
+
+plot one column using a historgram with 50 bins: df['columname'].plot.hist(bins=50)
+
+sort by column: df_sorted = df.sort_values(by='columname',ascending = False)
+  'ascending = False' means sorting it by descending values
+  
+subset the data so that we can see the data per row... in other words, this syntax is asking to "show me the values in my dataframe that match this filter
+  gdf[gdf['Total']==0]
+  
+ 
